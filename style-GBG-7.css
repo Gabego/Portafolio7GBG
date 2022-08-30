@@ -1,0 +1,60 @@
+/*- portafolio 7 - Gabriel Bello - Agosto 2022 -*/
+
+/*- configuracion de VARIABLES -*/
+:root {
+    --color-negro: #020403;
+    --color-gris: #ADADAD;
+    --color-branco: #FFFFFF;
+    --color-gris-habilidades: #221e1e;
+    --color-seccion1: #e60fa5;
+    --color-seccion2:#6f51f5;
+    --color-seccion3:#f1f511;
+    --color-seccion3:#3fe70c;
+    
+    --font-mobile-title: 40px;
+    --font-mobile-subtitle: 25px;
+    --font-mobile-subsection:18px;
+    --font-mobile-body: 16px;
+
+    --font-desktop-title: 80px; /*-150px; -*/
+    --font-desktop-subtitle:50px; /* 50px; */
+    --font-desktop-subsection: 45px;
+    --font-desktop-body: 28px;
+
+}
+
+
+
+/*-- RESETEO de la pagina paa uso en diferentes navegadores --*/
+html {
+    line-height: 1.5;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0px;
+    color: var(--color-branco);
+    text-align: center;
+  }
+
+h1, h2, p {
+    margin: 0px;
+}
+
+/*-- Se configura TODO los elementos como "border-Box" donde el tamaño total
+incluye el margen, padding y su contenido --*/
+* {
+    box-sizing: border-box;
+    /*--border: 1px solid white;--*/
+}
+
+/*- Mobile First 375 x 3350 -*/
+
+body {
+    font-family: 'Rubik';
+    width: 375px;
+    height: 3350px;
+    background-color: var(--color-negro);
+    border: 1px dashed darkcyan;
+    margin: 0 auto;
+}
+
+
