@@ -50,61 +50,88 @@ body {
     
 }
 
-.nav__container {
-    display: grid;
-}
 
-.nav__icono {
-    height: 50px;
-}
-
-.nav__close {
-    text-align: right;
-    padding: 0 20px;
-}
-.icono__menu {
-    padding-top: 10px;
-    color: var(--color-blanco);
-    font-size: 16px;
-    background: none;
-}
-.nav__menu {
-    height: 20px;
-    z-index: 1;
-    position: relative;
-    top: 0;
-    right: 110%; /*MENU OCULTO = 110% - visible=0 */
-}
-/* .show--menu {
-    right: 0%; /* MUESTRA EL MENU
-} */
 
 ul {
-    text-align: center;
-    background-color: #302e46;
-    height: 230px;
-}
-ul li {
     list-style: none;
-    margin-top: 20px;
 }
 a {
     color: var(--color-blanco);
     text-decoration: none;
 }
 
-.nav__link {
-    padding: 3px 8px;
+
+.header {
+ width: 100%;
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 10;
+ background: var(--color-negro);
+}
+
+.nav__container {
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1024px;
+    margin: 0 1.5rem;
+
+}
+
+ @media (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        background-color: #414d5e;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        transition: 0.3s;
+    }
+} 
+
+.show__menu {
+    right: 0;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.25rem;
+    padding-top: 9rem;
 }
 
 .nav__link:hover {
-    background-color: rgb(56, 56, 204);
+    padding: 5px 8px;
+    background: rgb(29, 29, 77);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.btn__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.btn__open {
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 .section {
     width: 340px ;
     text-align: center;
+    padding: calc(60px + 2rem) 0 2rem;
 }
+
+
 
 .home {
     width: 250px ;
@@ -392,26 +419,28 @@ a {
     font-size: 0.9rem;
 }
 
+
 /*-- RESPONSIVE Para 768px --*/
 @media screen and (min-width: 768px) {
-    .icono__menu {
-        display: none;
-    }
 
-    ul li {
-        float: right;
-        position: relative;
-        top: -50px;
-    }
-    ul {
-        text-align: center;
-        background-color: var(--color-negro);
-        height: 10px;
+    .nav__list {
+        flex-direction: row;
+        padding: initial;
+        column-gap: 1rem;
+        font-size: 1.3rem;
+     
     }
 
     .nav__menu {
-        right: 0%; /*MENU OCULTO = 110% - visible = 0 */
+        display: flex;
+       justify-content: flex-end;
     }
+
+    .btn__close, .btn__open {
+        display: none;
+    }
+
+
 
     .section {
         width: 728px;
@@ -543,6 +572,10 @@ a {
 
 /*-- RESPONSIVE Para 1024px --*/
 @media screen and (min-width: 1024px) {
+    .nav__list {
+        font-size: 1.5rem;
+    }
+
     .foto__perfil {
         width:250px;
     }

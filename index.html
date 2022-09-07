@@ -7,51 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/11065d3113.js" crossorigin="anonymous"></script>    
-<title>Portafolio GBG</title>
-<script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Portafolio GBG</title>
+    <script src="main.js" defer></script>
 </head>
 
-<header class="header" id="header">
-    <nav class ="nav__container">
-        <!-- <a href="#" class="van__logo">Academlo</a> -->
-    
-        <div class="nav__icono" >
-            <div class="nav__close" id="nav-close">
-                <i class="bx bx x"></i> 
-                <button class="icono__menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </div>
-        <div class="nav__menu show--menu" id="nav-menu">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a class="nav__link" href="#">Home</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="#acerca">Acerca de mi</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="#habilidades">Habilidades</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="#experiencia">Experiencia</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="#portafolio">Portafolio</a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="#contacto">Contacto</a>
-                </li>
-            </ul>
-        </div>
-
-    </nav>
-</header>
 <body>
+    <header class="header" id="header">
+        <nav class="nav__container">
+            <!-- <a href="#" class="van__logo">Academlo</a> -->
+
+
+            <div class="nav__menu show--menu" id="nav-menu">
+                <div class="icono__menu btn__close">
+                    <i class="bx bx-x"></i>
+                </div>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="#">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="#acerca">Acerca de mi</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="#experiencia">Experiencia</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="#portafolio">Portafolio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="icono__menu btn__open">
+                <i class="bx bx-menu"></i>
+            </div>
+
+        </nav>
+    </header>
+
     <section class="home section">
         <div class="foto__contenedor">
             <img class="foto__perfil" src="./imagenes/Foto-Desktop.png" alt="">
@@ -82,7 +82,7 @@
 
     <section id=habilidades class="habilidades section">
 
-    <p class="habilidades__subtitle subtitle ">Mis Habiliades</p>
+        <p class="habilidades__subtitle subtitle ">Mis Habiliades</p>
         <div class="habilidades__iconos">
             <div>
                 <div class="habilidades__circulo">
@@ -167,24 +167,24 @@
             <div>
                 <div class="contacto__circulo">
                     <img src="./Íconos/phone.svg" alt="Phone" class="contacto__img">
-                </div> 
-                <div class="contacto__texto">   
+                </div>
+                <div class="contacto__texto">
                     <p class="contacto_bold">Número Celular</p>
                     <p class="contacto_dato">5526895424</p>
                 </div>
-            </div>  
+            </div>
             <div>
                 <div class="contacto__circulo">
                     <img src="./Íconos/mail 1.svg" alt="Email" class="contacto__img">
                 </div>
-                <div class="contacto__texto">    
+                <div class="contacto__texto">
                     <p class="contacto_bold">Email</p>
                     <p class="contacto_dato">example@correo.com</p>
                 </div>
-            </div>  
+            </div>
             <div>
-                <p class="footer">Hecho con 🤍 por Gabego</p> 
-            </div>  
+                <p class="footer">Hecho con 🤍 por Gabego</p>
+            </div>
         </div>
     </Section>
 </body>
