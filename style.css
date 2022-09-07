@@ -1,60 +1,750 @@
-/*- portafolio 7 - Gabriel Bello - Agosto 2022 -*/
-
-/*- configuracion de VARIABLES -*/
+/*- Configracion de variables -*/
 :root {
+    /*- COLORES PAGINA -*/
     --color-negro: #020403;
-    --color-gris: #ADADAD;
-    --color-branco: #FFFFFF;
-    --color-gris-habilidades: #221e1e;
-    --color-seccion1: #e60fa5;
-    --color-seccion2:#6f51f5;
-    --color-seccion3:#f1f511;
-    --color-seccion3:#3fe70c;
-    
-    --font-mobile-title: 40px;
-    --font-mobile-subtitle: 25px;
-    --font-mobile-subsection:18px;
-    --font-mobile-body: 16px;
+    --color_gris: #ADADAD;
+    --color-blanco: #FFFFFF;
 
-    --font-desktop-title: 80px; /*-150px; -*/
-    --font-desktop-subtitle:50px; /* 50px; */
-    --font-desktop-subsection: 45px;
-    --font-desktop-body: 28px;
-
+    /*- FUENTAS PAGINA -*/
+    /*- Fuentes para MOBILE -*/
+    --body-font: 'Rubik';
+    --Body-16px-regular-mobile: 1rem;
+    --Subsection-18px-regular-mobile: 1.125rem;
+    --Subtitulo-25px-medion-mobile: 1.525rem;
+    --Titulo-40px-semibold-mobile: 2.5rem;
 }
 
+/*- Fuentes para tamaño 1024 -*/
+@media screen and (min-width: 1024px) {
+    :root {
+        --Body-18px-regular-desktop: 1.125rem;
+        --Subsection-45px-regular-desktop: 2.8125rem;
+        --Subtitulo-50px-semibold-desktop: 3.125rem;
+        --Titulo-150px-semibold-desktop: 9.375rem;
+    }
+}
 
-
-/*-- RESETEO de la pagina paa uso en diferentes navegadores --*/
+/*- Reseteo e inicializacion para navegadores -*/
 html {
-    line-height: 1.5;
+    font-size: 16px;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    margin: 0px;
-    color: var(--color-branco);
-    text-align: center;
-  }
-
-h1, h2, p {
-    margin: 0px;
 }
 
-/*-- Se configura TODO los elementos como "border-Box" donde el tamaño total
-incluye el margen, padding y su contenido --*/
-* {
-    box-sizing: border-box;
-    /*--border: 1px solid white;--*/
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
 }
-
-/*- Mobile First 375 x 3350 -*/
 
 body {
-    font-family: 'Rubik';
-    width: 375px;
-    height: 3350px;
+    font-family: var(--body-font);
+    font-size: var(--Body-16px-regular-mobile);
     background-color: var(--color-negro);
-    border: 1px dashed darkcyan;
+    color: var(--color-blanco);
+    padding: 10px 20px 0 20px;
+    top: 80px;
+    left: 0;
+    
+}
+
+.nav__container {
+    display: grid;
+}
+
+.nav__icono {
+    height: 50px;
+}
+
+.nav__close {
+    text-align: right;
+    padding: 0 20px;
+}
+.icono__menu {
+    padding-top: 10px;
+    color: var(--color-blanco);
+    font-size: 16px;
+    background: none;
+}
+.nav__menu {
+    height: 20px;
+    z-index: 1;
+    position: relative;
+    top: 0;
+    right: 110%; /*MENU OCULTO = 110% - visible=0 */
+}
+/* .show--menu {
+    right: 0%; /* MUESTRA EL MENU
+} */
+
+ul {
+    text-align: center;
+    background-color: #302e46;
+    height: 230px;
+}
+ul li {
+    list-style: none;
+    margin-top: 20px;
+}
+a {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.nav__link {
+    padding: 3px 8px;
+}
+
+.nav__link:hover {
+    background-color: rgb(56, 56, 204);
+}
+
+.section {
+    width: 340px ;
+    text-align: center;
+}
+
+.home {
+    width: 250px ;
+    margin: 0 auto;
+}
+.foto__perfil {
+    width: 130px;
+    padding-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color_gris);
+}
+
+.title {
+    font-size: 2rem;
+
+}
+
+
+.principal__icono {
+    width: 50px;
+    padding: 10px 10px;
+}
+
+.acerca {
+    margin: 50px auto;
+}
+
+.acerca__subtitle, .habilidades__subtitle,
+.experiencia__subtitle {
+ color: var(--color-blanco);
+ font-size: var(--Subtitulo-25px-medion-mobile);
+ margin: 20px 0;
+}
+
+.acerca__texto {
+    color: var(--color_gris);
+    font-size: 0.8rem;
+    margin: 20px 20px;
+    line-height: 20px;  
+}
+
+.habilidades {
+    height: 680px;
+    margin: 0 auto;
+}
+.habilidades__circulo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background:  #1f1716;
+    margin: auto auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.habilidades_img {
+    height: 45px;
+    margin: 12px auto 25px auto;
+}
+
+.habilidades__texto {
+    font-size: 14px;
+    width: 150px;
+    margin: 20px auto 35px auto;
+    font-weight: bold;
+}
+
+
+
+.habilidades__cir {
+    border: 1px solid white;
+} 
+
+.hab__cir1 {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 698px;
+    left: 277px;
+}
+
+
+.hab__cir2 {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 778px;
+    left: 282px;
+}
+
+
+.hab__cir3 {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 848px;
+    left: 288px;
+}
+
+
+.experiencia {
+    height: 250px;
+    margin: 0 auto;
+}
+
+.experiencia__datos {
+    display: grid;
+    grid-template-columns: 120px 170px;
+    grid-template-rows: 16px 16px 10px 10px 16px 16px 10px 10px 16px 16px;
+    margin: 6px 10px;
+}
+
+.experiencia__subtitle {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.experiencia__titulo {
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.experiencia__empresa, .experiencia__fecha {
+    font-size: 0.8rem;
+    color: #ADADAD;
+    text-align: left;
+}
+
+.experiencia__datos div:nth-child(1) {
+
+    grid-column: 2/3;
+    grid-row: 1/2
+}
+.experiencia__datos div:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 2/3
+}
+.experiencia__datos div:nth-child(3) {
+    grid-column: 1/2;
+    grid-row: 1/2
+}
+.experiencia__datos div:nth-child(4) {
+    grid-column: 2/3;
+    grid-row: 5/6
+}
+.experiencia__datos div:nth-child(5) {
+    grid-column: 2/3;
+    grid-row: 6/7
+}
+.experiencia__datos div:nth-child(6) {
+    grid-column: 1/2;
+    grid-row: 5/6
+}
+.experiencia__datos div:nth-child(7) {
+    grid-column: 2/3;
+    grid-row: 9/10
+}
+.experiencia__datos div:nth-child(8) {
+    grid-column: 2/3;
+    grid-row: 10/11;
+}
+.experiencia__datos div:nth-child(9) {
+    grid-column: 1/2;
+    grid-row: 9/10;
+}
+.experiencia__datos div:nth-child(10) {
+    border-top: 2px solid  #3f3635;
+    grid-column: 1/3;
+    grid-row: 8/9;
+}
+.experiencia__datos div:nth-child(11) {
+    border-top: 2px solid  #3f3635;
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+
+.experiencia__cir {
+    border: 1px solid white;
+} 
+
+.exp__cir1 {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -109px;
+    left: -83px;
+}
+
+
+.exp__cir2 {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -98px;
+    left: -79px;
+}
+
+
+.exp__cir3 {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -103px;
+    left: -194px;
+}
+
+.portafolio__subtitle, .contacto__subtitle {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: left;
+    color: var(--color-blanco);
+    margin: 20px 0;
+}
+
+
+.portafolio {
+    width: 350px;
     margin: 0 auto;
 }
 
 
+.portafolio__img {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+
+.portafolio__img {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.contacto {
+    height: 350px;
+    margin: 20px auto;
+}
+
+.contacto__datos {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 166px 10px;
+    text-align: center;
+    color: #ADADAD;
+}
+.contacto__circulo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #ADADAD;
+    margin: 0 auto;
+    text-align: center;
+}
+.contacto__texto {
+    margin: 30px auto;
+    font-size: 14px;
+}
+.contacto_bold {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.contacto_dato {
+    font-size: 0.7rem;
+}
+
+.contacto__img {
+    position: relative;
+    bottom: -8px;
+}
+
+.contacto__datos div:nth-child(3) {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    color: #ADADAD;
+    margin: 40px auto 20px auto;
+    font-size: 0.9rem;
+}
+
+/*-- RESPONSIVE Para 768px --*/
+@media screen and (min-width: 768px) {
+    .icono__menu {
+        display: none;
+    }
+
+    ul li {
+        float: right;
+        position: relative;
+        top: -50px;
+    }
+    ul {
+        text-align: center;
+        background-color: var(--color-negro);
+        height: 10px;
+    }
+
+    .nav__menu {
+        right: 0%; /*MENU OCULTO = 110% - visible = 0 */
+    }
+
+    .section {
+        width: 728px;
+        margin: 20px auto;
+    }
+   .subtitle{
+        font-size: 1.6rem;
+    }
+    .title {
+        font-size: 2.4rem;
+    }
+
+    .principal__icono {
+        width: 80px;
+        padding: 20px 15px;
+    }
+
+    .habilidades {
+        text-align: center;
+        height: 400px;
+    }
+    .habilidades__iconos {
+        width: 480px;
+        height: 320px;
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: 240px 240px;
+        grid-template-rows: 150px 150px 1px 1px;
+    }
+    .habilidades__texto {
+        width: 220px;
+        font-size: 0.6rem;
+    }
+
+    
+.hab__cir1 {
+    bottom: 212px;
+    left: 550px;
+}
+
+
+.hab__cir2 {
+    bottom: 207px;
+    left: 316px;
+}
+
+
+.hab__cir3 {
+    bottom: 203px;
+    left: 561px;
+}
+
+    .experiencia__datos {
+        width: 480px;  
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 150px 267px;
+        column-gap: 60px;
+        text-align: center;
+    }
+
+    .experiencia__datos div:nth-child(3) {
+        position: relative;
+        bottom: -27px;
+    }
+    .experiencia__datos div:nth-child(6) {
+        position: relative;
+        bottom: -27px;
+    }
+    .experiencia__datos div:nth-child(9) {
+        position: relative;
+        bottom: -27px;
+    }
+
+    .experiencia__datos div:nth-child(11) {
+        border-top: 1px solid #3f3635;
+        grid-column: 1/3;
+        grid-row: 4/5;
+        position: relative;
+        bottom: 3px;
+    }
+    .experiencia__datos div:nth-child(10) {
+        border-top: 1px solid #3f3635;
+        grid-column: 1/3;
+        grid-row: 8/9;
+        position: relative;
+        bottom: 3px;
+    }
+
+    
+.exp__cir1 {
+    bottom: -235px;
+    left: -176px;
+}
+.exp__cir2 {
+    bottom: -224px;
+    left: -171px;
+}
+.exp__cir3 {
+    bottom: -229px;
+    left: -377px;
+}
+
+.portafolio__subtitle, .contacto__subtitle {
+    text-align: center;
+}
+
+.portafolio {
+    height: 280px;
+    margin: 0 auto;
+}
+.portafolio__datos {
+    display: grid;
+    grid-template-columns: 220px 220px 220px;
+    grid-template-rows: 100px;
+    margin-left: 30px;
+}
+.portafolio__img {
+    width: 180px;
+}
+
+.contacto__datos {
+    width: 400px;
+    margin: auto;
+    grid-template-columns: 200px 200px;
+}
+
+}
+
+/*-- RESPONSIVE Para 1024px --*/
+@media screen and (min-width: 1024px) {
+    .foto__perfil {
+        width:250px;
+    }
+
+    .section {
+        width: 980px;
+    }
+
+   .subtitle{
+        font-size: 2.6rem;
+        font-weight: 500;
+    }
+    .title {
+        font-size: 4.0rem;
+        font-weight: 500;
+    }
+
+    .principal__icono {
+        width: 140px;
+        padding: 20px 40px;
+    }
+
+    .acerca {
+        width: 800px;
+    }
+    .acerca__texto {
+        font-size: 1.1rem;
+        line-height: 2rem;
+    }
+
+    .habilidades {
+        text-align: center;
+        margin-top: 50px;
+        height: 450px;
+    }
+    .habilidades__iconos {
+        width: 680px;
+        height: 420px;
+        display: grid;
+        margin: 50px auto;
+        grid-template-columns: 340px 340px;
+        grid-template-rows: 180px 150px 1px 1px;
+    }
+    .habilidades__texto {
+        width: 340px;
+        font-size: 0.8rem;
+        font-weight: 100;
+    }
+
+    .habilidades__circulo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    .habilidades_img {
+        width: 60px;
+        height: 70px;
+        position: relative;
+        bottom: -4px;
+    }
+    
+.hab__cir1 {
+    width: 150px;
+    height: 150px;
+    bottom: 254px;
+    left: 725px;
+}
+.hab__cir2 {
+    width: 130px;
+    height: 130px;
+    bottom: 244px;
+    left: 395px;
+}
+.hab__cir3 {
+    width: 110px;
+    height: 110px;
+    bottom: 235px;
+    left: 746px;
+}
+
+.experiencia__subtitle {
+    font-size: 2.8rem;
+}
+    .experiencia__datos {
+        width: 600px;  
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 200px 350px;
+        grid-template-rows: 20px 20px 10px 10px 20px 20px 10px 10px 20px 20px;
+        column-gap: 60px;
+        text-align: center;
+    }
+
+    .experiencia__titulo {
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-align: left;
+    }
+    
+    .experiencia__empresa, .experiencia__fecha {
+        font-size: 1.2rem;
+        color: #ADADAD;
+        text-align: left;
+    }
+
+    .experiencia__datos div:nth-child(3) {
+        position: relative;
+        bottom: -27px;
+    }
+    .experiencia__datos div:nth-child(6) {
+        position: relative;
+        bottom: -27px;
+    }
+    .experiencia__datos div:nth-child(9) {
+        position: relative;
+        bottom: -27px;
+    }
+
+    .experiencia__datos div:nth-child(11) {
+        border-top: 2px solid #3f3635;
+        grid-column: 1/3;
+        grid-row: 4/5;
+        position: relative;
+        bottom: 6px;
+    }
+    .experiencia__datos div:nth-child(10) {
+        border-top: 2px solid #3f3635;
+        grid-column: 1/3;
+        grid-row: 8/9;
+        position: relative;
+        bottom: 6px;
+    }
+
+    
+.exp__cir1 {
+    width: 150px;
+    height: 150px;
+    bottom: -203px;
+    left: -286px;
+}
+.exp__cir2 {
+    width: 130px;
+    height: 130px;
+    bottom: -192px;
+    left: -276px;
+}
+.exp__cir3 {
+    width: 110px;
+    height: 110px;
+    bottom: -202px;
+    left: -529px;
+}
+
+
+.portafolio__subtitle, .contacto__subtitle {
+    text-align: center;
+}
+
+.portafolio {
+    height: 280px;
+    margin: 0 auto;
+}
+.portafolio__datos {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 180px;
+    margin-left: 40px;
+}
+.portafolio__img {
+    width: 250px;
+}
+
+.contacto__subtitle {
+    font-size: 2.6rem;
+}
+.contacto__datos {
+    width: 500px;
+    margin: auto;
+    grid-template-columns: 250px 250px;
+}
+
+.contacto__circulo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #ADADAD;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto_bold {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.contacto_dato {
+    font-size: 0.9rem;
+}
+
+.contacto__img {
+    width: 50px;
+    position: relative;
+    bottom: -12px;
+}
+
+}
